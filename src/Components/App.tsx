@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-const BASE_URL = "https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/";
+const BASE_URL: string = "https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/";
 
 const App: React.FC = () => {
 	return (
