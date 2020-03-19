@@ -25,13 +25,13 @@ const GlobalStyle = createGlobalStyle`
 const BASE_URL: string = "https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/";
 
 const App: React.FC = () => {
-	return (
-		<React.Fragment>
-			<h1>Recipe Puppy</h1>
-			<GlobalStyle />
-			<RecipeList apiUrl={BASE_URL} />
-		</React.Fragment>
-	);
+    return (
+        <React.Fragment>
+            <h1>Recipe Puppy</h1>
+            <GlobalStyle />
+            <RecipeList apiUrl={BASE_URL} />
+        </React.Fragment>
+    );
 };
 
 export default App;
