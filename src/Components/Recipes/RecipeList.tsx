@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import SearchRecipe from "./SearchRecipe";
+import SearchRecipe from "./Search/SearchRecipe";
 import RecipeItem from "./RecipeItem";
-
-type Props = {
-    apiUrl: string;
-};
-
-type Recipe = {
-    title: string;
-    href: string;
-    ingredients: string;
-    thumbnail: string;
-};
+import { BASE_URL } from "../../constants";
+import { Recipe } from "./types";
 
 const StyledRecipeList = styled.div`
     display: grid;
@@ -30,15 +21,15 @@ const StyledRecipeList = styled.div`
     }
 `;
 
-const RecipeList: React.FC<Props> = ({ apiUrl }) => {
+const RecipeList: React.FC = () => {
     const [keyword, setKeyword] = useState<string>("");
     const [recipes, setRecipes] = useState<Recipe[] | null>(null);
 
     useEffect(() => {
-        fetch(apiUrl)
+        fetch(BASE_URL)
             .then(response => response.json())
             .then(recipes => setRecipes(recipes.results));
-    }, [apiUrl]);
+    }, []);
 
     const searchFilter = (keyword: string): void => {
         setKeyword(keyword.toLowerCase());

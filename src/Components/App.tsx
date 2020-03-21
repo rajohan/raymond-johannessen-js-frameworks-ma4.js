@@ -1,7 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 
-import RecipeList from "./RecipeList";
+import Recipes from "./Recipes";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -22,14 +22,12 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-const BASE_URL: string = "https://cors-anywhere.herokuapp.com/http://www.recipepuppy.com/api/";
-
 const App: React.FC = () => {
     return (
         <React.Fragment>
             <h1>Recipe Puppy</h1>
             <GlobalStyle />
-            <RecipeList apiUrl={BASE_URL} />
+            <Recipes />
         </React.Fragment>
     );
 };

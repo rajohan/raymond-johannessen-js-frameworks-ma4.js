@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import IngredientList from "./IngredientList";
+import IngredientList from "./Ingredients/IngredientList";
 
 type Props = {
     name: string;
